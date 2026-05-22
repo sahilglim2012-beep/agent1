@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* HSL Color System */
+  --bg-primary: 224 25% 9%;      /* Deep Slate Space */
+  --bg-secondary: 224 22% 13%;    /* Slightly Lighter Card Bg */
+  --bg-tertiary: 224 20% 18%;     /* Border & Hover BG */
+  
+  --accent-purple: 263 90% 64%;   /* Glowing Electric Violet */
+  --accent-purple-rgb: 168, 85, 247;
+  --accent-blue: 200 95% 55%;     /* Glowing Neon Blue */
+  --accent-blue-rgb: 56, 189, 248;
+  
+  --text-primary: 210 40% 98%;    /* Ice White */
+  --text-secondary: 215 20% 70%;  /* Cool Silver Gray */
+  --text-muted: 215 15% 45%;      /* Dark Gray */
+  
+  --success: 142 70% 45%;         /* Emerald Green */
+  --success-rgb: 34, 197, 94;
+  --warning: 38 92% 50%;          /* Amber Orange */
+  --error: 350 80% 55%;           /* Ruby Red */
+  --error-rgb: 239, 68, 68;
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --border-radius-xl: 32px;
+
+  --glass-bg: rgba(13, 17, 28, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  background-color: hsl(var(--bg-primary));
+  color: hsl(var(--text-primary));
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--bg-tertiary)) transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--bg-tertiary));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--text-muted));
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: radial-gradient(circle at 10% 20%, rgba(85, 30, 200, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(30, 120, 220, 0.12) 0%, transparent 40%),
+              hsl(var(--bg-primary));
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Premium Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-glow);
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.neon-btn {
+  position: relative;
+  background: linear-gradient(135deg, hsl(var(--accent-purple)) 0%, hsl(var(--accent-blue)) 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(var(--accent-purple-rgb), 0.3);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.neon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--accent-purple-rgb), 0.5);
+  filter: brightness(1.1);
+}
+.neon-btn:active {
+  transform: translateY(0);
+}
+.neon-btn:disabled {
+  background: hsl(var(--bg-tertiary));
+  color: hsl(var(--text-muted));
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+  filter: none;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: hsl(var(--text-primary));
+  padding: 0.75rem 1.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+}
+.badge-purple {
+  background: rgba(var(--accent-purple-rgb), 0.15);
+  color: hsl(var(--accent-purple));
+  border: 1px solid rgba(var(--accent-purple-rgb), 0.3);
+}
+.badge-blue {
+  background: rgba(var(--accent-blue-rgb), 0.15);
+  color: hsl(var(--accent-blue));
+  border: 1px solid rgba(var(--accent-blue-rgb), 0.3);
+}
+.badge-success {
+  background: rgba(var(--success-rgb), 0.15);
+  color: hsl(var(--success));
+  border: 1px solid rgba(var(--success-rgb), 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(var(--accent-purple-rgb), 0.2); }
+  50% { box-shadow: 0 0 25px rgba(var(--accent-purple-rgb), 0.4); }
+}
+.pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+/* Base styles for form inputs */
+input, select, textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-sm);
+  color: hsl(var(--text-primary));
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: hsl(var(--accent-purple));
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 3px rgba(var(--accent-purple-rgb), 0.15);
+}
